@@ -1,0 +1,43 @@
+{
+  "name": "group2-airbnb-playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test:authentication": "playwright test auth --project=chromium --headed",
+    "test:admin": "playwright test admin --project=chromium --headed",
+    "test:register": "playwright test register --project=chromium --headed",
+    "test:admin:user": "playwright test admin-user --project=chromium --headed",
+    "test:admin:location": "playwright test admin-location --project=chromium --headed",
+    "test:admin:room": "playwright test admin-room --project=chromium --headed",
+    "test:admin:all": "playwright test admin-user admin-location --project=chromium --headed --workers=1",
+    "allure:generate": "allure generate ./allure-results --clean -o ./allure-report",
+    "allure:open": "allure open ./allure-report",
+    "test:user": "playwright test tests/user.spec.ts --project=chromium --headed",
+    "test:user:avatar": "playwright test upload-avatar --project=chromium --headed",
+    "test:user:profile": "playwright test edit-profile --project=chromium --headed",
+    "test:user:rating": "playwright test rating-comment --project=chromium --headed",
+    "test:user:rating:tc1": "playwright test rating-comment --project=chromium --headed --grep \"TC1\"",
+"test:user:rating:tc2": "playwright test rating-comment --project=chromium --headed --grep \"TC2\"",
+"test:user:rating:tc3": "playwright test rating-comment --project=chromium --headed --grep \"TC3\"",
+"test:user:rating:tc4": "playwright test rating-comment --project=chromium --headed --grep \"TC4\"",
+    "test:search": "playwright test search --project=chromium --headed",
+    "test:roomlisting": "playwright test room-listing --project=chromium --headed",
+    "test:booking": "playwright test boo  king --project=chromium --headed",
+    "test:apiBooking": "playwright test apiBooking --project=chromium --headed",
+    "test:bookingHistory": "playwright test bookingHistory --project=chromium --headed"
+
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.5.2",
+    "allure-playwright": "^3.7.1"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.38.1"
+  }
+}
